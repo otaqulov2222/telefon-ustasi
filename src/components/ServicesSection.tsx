@@ -1,0 +1,193 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { Wrench, Smartphone, BatteryMedium, Droplet, PenTool, Cpu, Grid3X3, ArrowRight } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
+import Link from "next/link";
+
+export default function ServicesSection() {
+  const { t } = useLanguage();
+
+  const services = [
+    {
+      id: 1,
+      title: t("services.s1.title"),
+      description: t("services.s1.desc"),
+      icon: Smartphone,
+      glowColor: "rgba(56,189,248,0.15)", // Cyan
+      iconColor: "text-cyan-400",
+      colSpan: "col-span-1 md:col-span-2 lg:col-span-2",
+      bgImg: "bg-gradient-to-br from-cyan-500/10 to-transparent",
+      href: "/services/ekran-almashtirish"
+    },
+    {
+      id: 2,
+      title: t("services.s2.title"),
+      description: t("services.s2.desc"),
+      icon: BatteryMedium,
+      glowColor: "rgba(52,211,153,0.15)", // Emerald
+      iconColor: "text-emerald-400",
+      colSpan: "col-span-1",
+      bgImg: "bg-gradient-to-br from-emerald-500/10 to-transparent",
+      href: "/services/batareya-almashtirish"
+    },
+    {
+      id: 3,
+      title: t("services.s3.title"),
+      description: t("services.s3.desc"),
+      icon: Droplet,
+      glowColor: "rgba(59,130,246,0.15)", // Blue
+      iconColor: "text-blue-400",
+      colSpan: "col-span-1",
+      bgImg: "bg-gradient-to-br from-blue-500/10 to-transparent",
+      href: "/services/suvdan-tozalash"
+    },
+    {
+      id: 4,
+      title: t("services.s4.title"),
+      description: t("services.s4.desc"),
+      icon: PenTool,
+      glowColor: "rgba(232,121,249,0.15)", // Pink
+      iconColor: "text-pink-400",
+      colSpan: "col-span-1 md:col-span-2 lg:col-span-1",
+      bgImg: "bg-gradient-to-br from-pink-500/10 to-transparent",
+      href: "/services/dasturiy-taminot"
+    },
+    {
+      id: 5,
+      title: t("services.s5.title"),
+      description: t("services.s5.desc"),
+      icon: Cpu,
+      glowColor: "rgba(251,146,60,0.15)", // Orange
+      iconColor: "text-orange-400",
+      colSpan: "col-span-1 md:col-span-2 lg:col-span-2",
+      bgImg: "bg-gradient-to-br from-orange-500/10 to-transparent",
+      href: "/services/plata-tamiri"
+    },
+    {
+      id: 6,
+      title: t("services.s6.title"),
+      description: t("services.s6.desc"),
+      icon: Grid3X3,
+      glowColor: "rgba(167,139,250,0.15)", // Purple
+      iconColor: "text-purple-400",
+      colSpan: "col-span-1 md:col-span-2 lg:col-span-1",
+      bgImg: "bg-gradient-to-br from-purple-500/10 to-transparent",
+      href: "/services/barcha-brendlar"
+    },
+  ];
+
+  return (
+    <section id="xizmatlar" className="relative w-full py-16 sm:py-24 bg-[#000000] overflow-hidden">
+      
+      {/* Deep Background Noise & Grid */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:3rem_3rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
+      </div>
+
+      {/* Glows */}
+      <div className="absolute top-[20%] -left-[10%] w-[600px] h-[600px] bg-cyan-600/10 rounded-full blur-[150px] pointer-events-none mix-blend-screen" />
+      <div className="absolute bottom-[20%] -right-[10%] w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[150px] pointer-events-none mix-blend-screen" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        {/* Elegant Header Area */}
+        <div className="flex flex-col items-center text-center mb-20">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/[0.03] border border-white/10 backdrop-blur-3xl mb-8 shadow-2xl"
+          >
+            <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+            <span className="text-xs font-bold text-gray-300 tracking-[0.2em] uppercase">{t("nav.services")}</span>
+          </motion.div>
+          
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-4xl md:text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-500 mb-8 tracking-tighter"
+          >
+            {t("services.title")}
+          </motion.h2>
+          
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto font-medium"
+          >
+            {t("services.desc")}
+          </motion.p>
+        </div>
+
+        {/* Bento Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-fr">
+          {services.map((service, index) => (
+            <Link href={service.href} key={service.id} className={`block ${service.colSpan}`}>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6, delay: index * 0.1, ease: [0.21, 1.02, 0.73, 1] }}
+                className={`group relative flex flex-col p-6 sm:p-8 md:p-10 h-full rounded-[2rem] bg-[#0A101C] border border-white/5 overflow-hidden transition-all duration-500 hover:border-white/20 hover:-translate-y-1 shadow-xl`}
+              >
+                {/* Hover Ambient Glow inside card */}
+                <div 
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none mix-blend-screen"
+                  style={{ background: `radial-gradient(circle at top right, ${service.glowColor}, transparent 60%)` }}
+                />
+                
+                {/* Static faint background gradient */}
+                <div className={`absolute inset-0 opacity-30 pointer-events-none ${service.bgImg}`} />
+
+                {/* Massive Watermark Icon */}
+                <service.icon 
+                  className="absolute -bottom-10 -right-10 w-64 h-64 text-white/[0.02] group-hover:text-white/[0.05] transition-all duration-700 group-hover:scale-110 group-hover:-rotate-6 pointer-events-none" 
+                  strokeWidth={1}
+                />
+
+                <div className="relative z-10 flex flex-col h-full">
+                  {/* Header (Icon + Title) */}
+                  <div className={`flex ${service.colSpan.includes('lg:col-span-2') ? 'flex-col sm:flex-row sm:items-center' : 'flex-col'} gap-4 sm:gap-6 mb-4 sm:mb-6`}>
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 shrink-0 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center justify-center backdrop-blur-md transition-all duration-500 group-hover:scale-110">
+                      <service.icon className={`w-6 h-6 sm:w-7 sm:h-7 ${service.iconColor}`} strokeWidth={1.5} />
+                    </div>
+                    <h3 className={`text-xl sm:text-2xl lg:text-3xl font-bold text-white tracking-tight ${service.colSpan.includes('lg:col-span-2') ? 'max-w-xs' : ''}`}>
+                      {service.title}
+                    </h3>
+                  </div>
+                  
+                  {/* Description */}
+                  <p className="text-gray-400 text-sm sm:text-base leading-relaxed flex-grow z-10">
+                    {service.description}
+                  </p>
+                  
+                  {/* Premium Read More Button */}
+                  <div className="mt-8 flex items-center w-fit">
+                    <div className="relative px-5 py-2.5 rounded-full bg-white/5 border border-white/10 flex items-center gap-3 transition-all duration-500 overflow-hidden group-hover:bg-white/10 group-hover:border-white/20 group-hover:shadow-[0_0_30px_-5px_rgba(255,255,255,0.1)] backdrop-blur-sm">
+                      <div className="absolute inset-0 w-1/2 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-[200%] group-hover:translate-x-[300%] transition-transform duration-1000 ease-in-out" />
+                      <span className="text-xs font-bold tracking-[0.15em] uppercase text-gray-400 group-hover:text-white relative z-10 transition-colors duration-300">
+                        {t("services.moreBtn") || "Batafsil ma'lumot"}
+                      </span>
+                      <div className="w-7 h-7 shrink-0 rounded-full bg-blue-600 flex items-center justify-center border border-blue-500/50 relative z-10 group-hover:bg-blue-500 transition-all duration-300 shadow-[0_0_10px_-2px_rgba(37,99,235,0.5)]">
+                        <ArrowRight className="w-3.5 h-3.5 text-white transition-transform duration-300 group-hover:translate-x-0.5" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Top Highlight Line */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              </motion.div>
+            </Link>
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
+}
