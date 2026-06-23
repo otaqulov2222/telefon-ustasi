@@ -104,7 +104,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
   const data = serviceData[resolvedParams.slug];
 
   return (
-    <main className="bg-black min-h-screen">
+    <main className="bg-gray-50 dark:bg-black min-h-screen transition-colors duration-500 relative">
       <ServiceDetailsClient data={data} />
       <FooterSection />
     </main>

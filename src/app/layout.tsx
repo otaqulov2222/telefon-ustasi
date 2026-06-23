@@ -17,6 +17,7 @@ export const viewport: Viewport = {
 
 import { LanguageProvider } from "@/context/LanguageContext";
 import { ModalProvider } from "@/context/ModalContext";
+import { ThemeProvider } from "@/context/ThemeContext";
 import OrderModal from "@/components/OrderModal";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
@@ -26,15 +27,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full antialiased">
-      <body className="min-h-full flex flex-col bg-[#000000] text-white selection:bg-blue-600 selection:text-white">
-        <LanguageProvider>
-          <ModalProvider>
-            <Navbar />
-            {children}
-            <OrderModal />
-          </ModalProvider>
-        </LanguageProvider>
+    <html lang="en" className="h-full antialiased dark" suppressHydrationWarning>
+      <body className="min-h-full flex flex-col bg-white dark:bg-[#000000] text-black dark:text-white selection:bg-blue-600 selection:text-white transition-colors duration-500 overflow-x-hidden break-words">
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+          <LanguageProvider>
+            <ModalProvider>
+              <Navbar />
+              {children}
+              <OrderModal />
+            </ModalProvider>
+          </LanguageProvider>
+        </ThemeProvider>
         {process.env.NEXT_PUBLIC_GA_ID && (
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
         )}
