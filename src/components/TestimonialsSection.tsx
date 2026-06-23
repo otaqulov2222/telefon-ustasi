@@ -96,7 +96,7 @@ export default function TestimonialsSection() {
 
               {/* Internal Hover Glow */}
               <div 
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none mix-blend-multiply dark:mix-blend-screen group-hover:bg-[radial-gradient(circle_at_top_right,rgba(245,158,11,0.05),transparent_70%)] dark:group-hover:bg-[radial-gradient(circle_at_top_right,rgba(245,158,11,0.1),transparent_70%)]"
+                className="absolute inset-0 opacity-30 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none mix-blend-multiply dark:mix-blend-screen group-hover:bg-[radial-gradient(circle_at_top_right,rgba(245,158,11,0.05),transparent_70%)] dark:group-hover:bg-[radial-gradient(circle_at_top_right,rgba(245,158,11,0.1),transparent_70%)] bg-[radial-gradient(circle_at_top_right,rgba(245,158,11,0.02),transparent_70%)] dark:bg-[radial-gradient(circle_at_top_right,rgba(245,158,11,0.05),transparent_70%)]"
               />
 
               {/* Massive Watermark Quote */}
@@ -119,7 +119,7 @@ export default function TestimonialsSection() {
               {/* Author */}
               <div className="flex items-center gap-5 relative z-10 mt-auto">
                 <div className="relative w-14 h-14 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-black border border-black/10 dark:border-white/10 flex items-center justify-center text-gray-900 dark:text-white font-black text-xl shadow-lg group-hover:border-amber-500/50 transition-colors duration-500">
-                  <div className="absolute inset-0 bg-amber-500/10 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-0 bg-amber-500/10 rounded-full blur-md opacity-30 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   {item.name.charAt(0)}
                 </div>
                 <div>
@@ -129,7 +129,7 @@ export default function TestimonialsSection() {
               </div>
               
               {/* Top Highlight Line */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-black/10 dark:via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-black/10 dark:via-white/20 to-transparent opacity-50 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
             </motion.div>
           ))}
         </div>

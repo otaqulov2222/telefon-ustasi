@@ -117,7 +117,7 @@ export default function ProcessSection() {
 
                 {/* Hover Ambient Glow inside card */}
                 <div 
-                  className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none mix-blend-multiply dark:mix-blend-screen ${step.glowClass}`}
+                  className={`absolute inset-0 opacity-30 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none mix-blend-multiply dark:mix-blend-screen ${step.glowClass}`}
                 />
                 
                 {/* Massive Background Number */}
@@ -148,7 +148,7 @@ export default function ProcessSection() {
                 </div>
 
                 {/* Top Highlight Line */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-black/10 dark:via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-black/10 dark:via-white/20 to-transparent opacity-50 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
               </motion.div>
             ))}
           </div>
