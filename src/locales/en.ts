@@ -88,5 +88,19 @@ export const en = {
     note: "Additional Note",
     notePlaceholder: "If you have any extra information, write it here...",
     submit: "Send Request"
+  },
+  faq: {
+    title: "Frequently Asked Questions",
+    desc: "Answers to the most common questions asked by our customers.",
+    q1: "How long does the repair take?",
+    a1: "Most repairs (like screen or battery replacement) are done in 30-60 minutes right in front of you. Complex motherboard repairs may take 1-2 days.",
+    q2: "Are the spare parts original?",
+    a2: "We offer both 100% original parts and high-quality (AAA+) copy parts based on your preference. The choice is yours.",
+    q3: "Is there a warranty for the services?",
+    a3: "Yes, we provide a written warranty from 1 to 6 months for all our services and installed spare parts.",
+    q4: "Is the diagnostic service paid?",
+    a4: "No, finding the problem with your device (diagnostics) is completely free. You can make a decision after finding out the repair cost.",
+    q5: "What payment methods are available?",
+    a5: "You can pay in Cash, Payme, Click, or via Uzcard/Humo credit cards."
   }
 };

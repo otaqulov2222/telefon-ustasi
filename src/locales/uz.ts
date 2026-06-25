@@ -88,5 +88,19 @@ export const uz = {
     note: "Qo'shimcha izoh",
     notePlaceholder: "Qandaydir qo'shimcha ma'lumotlar bo'lsa yozib qoldiring...",
     submit: "So'rovni yuborish"
+  },
+  faq: {
+    title: "Ko'p Beriladigan Savollar",
+    desc: "Mijozlarimiz tomonidan eng ko'p beriladigan savollarga javoblar.",
+    q1: "Ta'mirlash qancha vaqt oladi?",
+    a1: "Ko'pgina ta'mirlash ishlari (masalan, ekran yoki batareya almashtirish) 30-60 daqiqa ichida mijoz ko'z o'ngida amalga oshiriladi. Murakkab plata ta'mirlash ishlari 1-2 kun vaqt olishi mumkin.",
+    q2: "Ehtiyot qismlar originalmi?",
+    a2: "Biz mijozning xohishiga ko'ra ham 100% original, ham yuqori sifatli (AAA+) nusxa ehtiyot qismlarni taklif qilamiz. Tanlov o'zingizda bo'ladi.",
+    q3: "Xizmatlar uchun kafolat bormi?",
+    a3: "Albatta, barcha turdagi xizmatlarimiz va o'rnatilgan ehtiyot qismlar uchun 1 oydan 6 oygacha yozma kafolat beramiz.",
+    q4: "Diagnostika xizmati pullikmi?",
+    a4: "Yo'q, qurilmangizdagi muammoni aniqlash (diagnostika) mutlaqo bepul. Ta'mirlash narxini bilgandan so'ng qaror qabul qilishingiz mumkin.",
+    q5: "Qanday to'lov usullari mavjud?",
+    a5: "Siz Naqd pul, Payme, Click yoki Uzcard/Humo plastik kartalari orqali to'lov qilishingiz mumkin."
   }
 };

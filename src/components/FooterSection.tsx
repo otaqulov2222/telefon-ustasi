@@ -1,16 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Phone, MapPin, Clock } from "lucide-react";
+import { ArrowRight, Phone, MapPin, Clock, ShieldCheck, Wrench, Sparkles } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { useModal } from "@/context/ModalContext";
 
 export default function FooterSection() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { openModal } = useModal();
 
   return (
-    <footer id="kontakt" className="relative w-full bg-white dark:bg-[#000000] pt-8 pb-8 mt-24 transition-colors duration-500">
+    <footer id="kontakt" className="relative w-full bg-white dark:bg-black pt-8 pb-8 mt-24 transition-colors duration-500">
       
       {/* Background Container - Handles overflow for background elements only */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
@@ -116,53 +116,53 @@ export default function FooterSection() {
             </ul>
           </div>
 
-          {/* Contact Info */}
-          <div className="lg:col-span-3">
-            <h4 className="text-gray-900 dark:text-white font-bold mb-8 tracking-[0.2em] text-xs uppercase h-8">{t("footer.contact")}</h4>
-            <ul className="space-y-6">
-              <li>
-                <a 
-                  href="https://yandex.uz/maps/10335/tashkent/?text=Malika%20savdo%20majmuasi"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-start gap-4 hover:text-blue-600 dark:hover:text-white transition-colors cursor-pointer py-1"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-black/5 dark:bg-white/[0.03] border border-black/10 dark:border-white/10 flex items-center justify-center shrink-0 group-hover:bg-blue-500/10 dark:group-hover:bg-blue-500/20 group-hover:border-blue-500/30 dark:group-hover:border-blue-500/50 transition-all duration-300 group-hover:scale-110 shadow-lg shadow-transparent group-hover:shadow-blue-500/20">
-                    <MapPin className="w-5 h-5 text-blue-600 dark:text-blue-400 group-hover:animate-bounce" />
-                  </div>
-                  <span className="text-gray-600 dark:text-gray-400 text-sm font-medium leading-relaxed group-hover:text-blue-600 dark:group-hover:text-white transition-colors pt-1">
-                    {t("footer.address")}
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="tel:+998901234567" 
-                  className="group flex items-center gap-4 py-1 hover:text-blue-600 dark:hover:text-white transition-colors cursor-pointer"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-black/5 dark:bg-white/[0.03] border border-black/10 dark:border-white/10 flex items-center justify-center shrink-0 group-hover:bg-blue-500/10 dark:group-hover:bg-blue-500/20 group-hover:border-blue-500/30 dark:group-hover:border-blue-500/50 transition-all duration-300 group-hover:scale-110 shadow-lg shadow-transparent group-hover:shadow-blue-500/20">
-                    <Phone className="w-5 h-5 text-blue-600 dark:text-blue-400 group-hover:rotate-12 transition-transform" />
-                  </div>
-                  <span className="text-gray-600 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-white transition-colors font-medium">
-                    +998 90 123 45 67
-                  </span>
-                </a>
-              </li>
-              <li className="group flex items-center gap-4 py-1 cursor-default">
-                <div className="w-10 h-10 rounded-xl bg-black/5 dark:bg-white/[0.03] border border-black/10 dark:border-white/10 flex items-center justify-center shrink-0 group-hover:bg-blue-500/10 dark:group-hover:bg-blue-500/20 group-hover:border-blue-500/30 dark:group-hover:border-blue-500/50 transition-all duration-300">
-                  <Clock className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+          {/* Advantages & CTA */}
+          <div className="lg:col-span-3 lg:col-start-10">
+            <h4 className="text-gray-900 dark:text-white font-bold mb-8 tracking-[0.2em] text-xs uppercase h-8 whitespace-nowrap">
+              {language === 'uz' ? 'Afzalliklarimiz' : language === 'ru' ? 'Наши преимущества' : language === 'en' ? 'Our Advantages' : 'Avantajlarımız'}
+            </h4>
+            <div className="space-y-5 mb-8">
+              <div className="flex items-center gap-4 group cursor-default">
+                <div className="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
+                  <Clock className="w-5 h-5" />
                 </div>
-                <span className="text-gray-600 dark:text-gray-400 text-sm font-medium group-hover:text-blue-600 dark:group-hover:text-white transition-colors">
-                  {t("footer.workHours")}
+                <span className="text-gray-600 dark:text-gray-300 text-[15px] font-medium group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  {language === 'uz' ? '30 daqiqada tayyor' : language === 'ru' ? 'Готово за 30 минут' : language === 'en' ? 'Ready in 30 mins' : '30 dakikada hazır'}
                 </span>
-              </li>
-            </ul>
-          </div>
+              </div>
+              <div className="flex items-center gap-4 group cursor-default">
+                <div className="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-300">
+                  <ShieldCheck className="w-5 h-5" />
+                </div>
+                <span className="text-gray-600 dark:text-gray-300 text-[15px] font-medium group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                  {language === 'uz' ? '6 oygacha kafolat' : language === 'ru' ? 'Гарантия до 6 месяцев' : language === 'en' ? 'Up to 6 months warranty' : '6 aya kadar garanti'}
+                </span>
+              </div>
+              <div className="flex items-center gap-4 group cursor-default">
+                <div className="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center shrink-0 group-hover:bg-purple-500 group-hover:text-white transition-all duration-300">
+                  <Wrench className="w-5 h-5" />
+                </div>
+                <span className="text-gray-600 dark:text-gray-300 text-[15px] font-medium group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                  {language === 'uz' ? 'Original ehtiyot qismlar' : language === 'ru' ? 'Оригинальные запчасти' : language === 'en' ? 'Original spare parts' : 'Orijinal parçalar'}
+                </span>
+              </div>
+            </div>
 
+            <button 
+              onClick={openModal}
+              className="w-full flex items-center justify-between gap-2 px-6 py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white font-bold transition-all duration-300 shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_25px_rgba(37,99,235,0.5)] hover:-translate-y-1 active:scale-95 group"
+            >
+              <span className="flex items-center gap-2">
+                <Sparkles className="w-5 h-5" />
+                {language === 'uz' ? 'Bepul konsultatsiya' : language === 'ru' ? 'Бесплатная консультация' : language === 'en' ? 'Free Consultation' : 'Ücretsiz Danışmanlık'}
+              </span>
+              <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+            </button>
+          </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 relative flex flex-col md:flex-row items-center justify-between gap-6 z-10 text-center md:text-left">
+        <div className="pt-8 mt-12 relative flex flex-col md:flex-row items-center justify-between gap-6 z-10 text-center md:text-left">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-black/10 dark:via-white/10 to-transparent" />
           
           <p className="text-gray-500 text-sm font-medium">

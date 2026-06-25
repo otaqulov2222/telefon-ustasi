@@ -1,10 +1,35 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import FloatingContactButton from "@/components/FloatingContactButton";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "Malika Ustasi - Toshkentda №1 Telefon Ta'mirlash Markazi",
   description: "Singan ekranlar, tez tugaydigan batareyalar va dasturiy muammolarni eng tez fursatlarda ta'mirlaymiz. 6 oygacha kafolat. Malika savdo majmuasi.",
+  keywords: "telefon tamirlash, iphone ustasi, malika bozor service, ekran almashtirish, batareya almashtirish",
+  openGraph: {
+    title: "Malika Ustasi - Telefon Ta'mirlash Markazi",
+    description: "Toshkentda №1 Telefon Ta'mirlash Markazi. Eng tez va ishonchli xizmat ko'rsatish.",
+    url: "https://malikabozorservice.uz",
+    siteName: "Malika Ustasi",
+    images: [
+      {
+        url: "/section1-bg.png",
+        width: 1200,
+        height: 630,
+        alt: "Malika Ustasi - Telefon Ta'mirlash",
+      },
+    ],
+    locale: "uz_UZ",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Malika Ustasi - Telefon Ta'mirlash",
+    description: "Toshkentda №1 Telefon Ta'mirlash Markazi. 6 oygacha kafolat.",
+    images: ["/section1-bg.png"],
+  },
 };
 
 export const viewport: Viewport = {
@@ -34,6 +59,8 @@ export default function RootLayout({
             <ModalProvider>
               <Navbar />
               {children}
+              <FloatingContactButton />
+              <Toaster position="top-center" richColors theme="system" />
               <OrderModal />
             </ModalProvider>
           </LanguageProvider>

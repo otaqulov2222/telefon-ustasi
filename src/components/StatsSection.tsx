@@ -56,10 +56,11 @@ export default function StatsSection() {
   const marqueeItems = [...features, ...features, ...features, ...features];
 
   return (
-    <section className="relative w-full py-16 sm:py-24 bg-[url('/section2-bg-light.png')] dark:bg-[url('/section2-bg.png')] bg-fixed bg-cover bg-center bg-no-repeat overflow-hidden transition-colors duration-500" id="stats">
+    <section className="relative w-full py-16 sm:py-24 bg-[url('/bg-light-1.png')] dark:bg-[url('/bg-dark-1.png')] bg-fixed bg-cover bg-center overflow-hidden transition-colors duration-500" id="stats">
+      
       {/* Dynamic Background Overlay */}
-      <div className="absolute inset-0 bg-white/60 dark:bg-black/70 backdrop-blur-[2px] z-0 transition-colors duration-500">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000008_1px,transparent_1px),linear-gradient(to_bottom,#00000008_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
+      <div className="absolute inset-0 bg-white/40 dark:bg-black/60 backdrop-blur-[1px] z-0 transition-colors duration-500">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
       </div>
 
       {/* Infinite Marquee Strip (Features) */}
@@ -97,7 +98,7 @@ export default function StatsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: idx * 0.1 }}
-              className="group relative overflow-hidden rounded-[2rem] bg-white/70 dark:bg-black/40 backdrop-blur-2xl border border-black/5 dark:border-white/10 p-8 transition-all duration-500 hover:-translate-y-2 hover:border-black/10 dark:hover:border-white/20 hover:bg-white/90 dark:hover:bg-black/60 shadow-xl dark:shadow-2xl"
+              className="group relative overflow-hidden rounded-[2rem] bg-white dark:bg-black/40 backdrop-blur-2xl border border-black/5 dark:border-white/10 p-8 transition-all duration-500 hover:-translate-y-2 hover:border-black/10 dark:hover:border-white/20 hover:bg-white dark:hover:bg-black/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-2xl"
             >
               {/* Inner highlight for glass effect */}
               <div className="absolute inset-0 rounded-[2rem] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.8)] dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] pointer-events-none" />

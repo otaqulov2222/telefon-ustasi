@@ -88,5 +88,19 @@ export const tr = {
     note: "Ek Not",
     notePlaceholder: "Ek bilgi varsa buraya yazın...",
     submit: "Talebi Gönder"
+  },
+  faq: {
+    title: "Sıkça Sorulan Sorular",
+    desc: "Müşterilerimiz tarafından en sık sorulan soruların yanıtları.",
+    q1: "Tamir ne kadar sürer?",
+    a1: "Çoğu tamir (ekran veya batarya değişimi gibi) 30-60 dakika içinde gözlerinizin önünde yapılır. Karmaşık anakart tamirleri 1-2 gün sürebilir.",
+    q2: "Yedek parçalar orijinal mi?",
+    a2: "Tercihinize göre hem %100 orijinal parçalar hem de yüksek kaliteli (AAA+) kopya parçalar sunuyoruz. Seçim sizin.",
+    q3: "Hizmetler için garanti var mı?",
+    a3: "Evet, tüm hizmetlerimiz ve takılan yedek parçalarımız için 1 ile 6 ay arasında yazılı garanti veriyoruz.",
+    q4: "Arıza tespiti (diyagnostik) ücretli mi?",
+    a4: "Hayır, cihazınızdaki sorunu bulmak (arıza tespiti) tamamen ücretsizdir. Tamir maliyetini öğrendikten sonra karar verebilirsiniz.",
+    q5: "Hangi ödeme yöntemleri mevcut?",
+    a5: "Nakit, Payme, Click veya Uzcard/Humo kredi kartları ile ödeme yapabilirsiniz."
   }
 };

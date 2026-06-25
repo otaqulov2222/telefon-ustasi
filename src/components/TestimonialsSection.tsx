@@ -35,11 +35,11 @@ export default function TestimonialsSection() {
   ];
 
   return (
-    <section id="sharhlar" className="relative w-full py-16 sm:py-24 bg-[url('/section5-bg-light.png')] dark:bg-[url('/section5-bg.png')] bg-fixed bg-cover bg-center bg-no-repeat overflow-hidden flex flex-col items-center justify-center transition-colors duration-500">
+    <section id="sharhlar" className="relative w-full py-16 sm:py-24 bg-[url('/bg-light-1.png')] dark:bg-[url('/bg-dark-1.png')] bg-fixed bg-cover bg-center overflow-hidden flex flex-col items-center justify-center transition-colors duration-500">
       
       {/* Deep Background Noise & Grid Overlay */}
-      <div className="absolute inset-0 bg-white/60 dark:bg-black/80 backdrop-blur-[2px] z-0 transition-colors duration-500">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000008_1px,transparent_1px),linear-gradient(to_bottom,#00000008_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:3rem_3rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
+      <div className="absolute inset-0 bg-white/40 dark:bg-black/60 backdrop-blur-[1px] z-0 transition-colors duration-500">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:3rem_3rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
       </div>
 
       {/* Ambient Gold/Amber Glow */}
@@ -89,7 +89,7 @@ export default function TestimonialsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: item.delay, duration: 0.6, ease: [0.21, 1.02, 0.73, 1] }}
-              className="group relative p-6 sm:p-8 md:p-10 rounded-[2rem] bg-white/70 dark:bg-black/40 backdrop-blur-2xl border border-black/5 dark:border-white/10 overflow-hidden transition-all duration-500 hover:border-amber-500/30 dark:hover:border-amber-500/30 hover:-translate-y-2 hover:bg-white/90 dark:hover:bg-black/60 shadow-xl dark:shadow-2xl flex flex-col"
+              className="group relative p-6 sm:p-8 md:p-10 rounded-[2rem] bg-white dark:bg-black/40 backdrop-blur-2xl border border-black/5 dark:border-white/10 overflow-hidden transition-all duration-500 hover:border-amber-500/30 dark:hover:border-amber-500/30 hover:-translate-y-2 hover:bg-white dark:hover:bg-black/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-2xl flex flex-col"
             >
               {/* Inner highlight for glass effect */}
               <div className="absolute inset-0 rounded-[2rem] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.8)] dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] pointer-events-none" />
@@ -100,7 +100,7 @@ export default function TestimonialsSection() {
               />
 
               {/* Massive Watermark Quote */}
-              <div className="absolute -top-10 -right-10 text-black/[0.02] dark:text-white/[0.02] group-hover:text-black/[0.04] dark:group-hover:text-white/[0.04] transition-colors duration-700 pointer-events-none group-hover:scale-110 group-hover:rotate-12">
+              <div className="absolute -top-10 -right-10 text-black/[0.01] dark:text-white/[0.02] group-hover:text-black/[0.02] dark:group-hover:text-white/[0.04] transition-colors duration-700 pointer-events-none group-hover:scale-110 group-hover:rotate-12">
                 <Quote size={200} strokeWidth={0.5} />
               </div>
 

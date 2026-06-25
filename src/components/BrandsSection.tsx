@@ -83,9 +83,10 @@ export default function BrandsSection() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative w-full py-16 sm:py-24 bg-[#000000] overflow-hidden" id="brendlar">
+    <section className="relative w-full py-16 sm:py-24 bg-[url('/bg-dark-1.png')] bg-fixed bg-cover bg-center overflow-hidden" id="brendlar">
       
       {/* Background Ambience */}
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-[1px] pointer-events-none" />
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[500px] bg-blue-900/10 rounded-full blur-[150px] pointer-events-none" />
 

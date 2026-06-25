@@ -6,6 +6,7 @@ import { X, Send, Smartphone, PenTool, Sparkles, User, Phone, CheckCircle2 } fro
 import { useModal } from "@/context/ModalContext";
 import { useLanguage } from "@/context/LanguageContext";
 import { sendGAEvent } from "@next/third-parties/google";
+import { toast } from "sonner";
 
 export default function OrderModal() {
   const { isOpen, closeModal } = useModal();
@@ -61,11 +62,11 @@ export default function OrderModal() {
           (window as any).gtag('event', 'conversion', { 'send_to': process.env.NEXT_PUBLIC_GA_ADS_ID });
         }
       } else {
-        alert("Xatolik yuz berdi. Iltimos keyinroq qayta urinib ko'ring yoki qo'ng'iroq qiling.");
+        toast.error("Xatolik yuz berdi. Iltimos keyinroq qayta urinib ko'ring yoki qo'ng'iroq qiling.");
       }
     } catch (error) {
       console.error(error);
-      alert("Xatolik yuz berdi. Iltimos keyinroq qayta urinib ko'ring yoki qo'ng'iroq qiling.");
+      toast.error("Xatolik yuz berdi. Iltimos keyinroq qayta urinib ko'ring yoki qo'ng'iroq qiling.");
     } finally {
       setIsSubmitting(false);
     }
