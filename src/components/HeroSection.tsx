@@ -216,16 +216,18 @@ export default function HeroSection({ customTitle1, customTitle2, customTitle3, 
           <div 
             className="absolute inset-0 flex flex-col justify-center items-start px-4 sm:px-8 md:px-16 lg:px-24 pointer-events-auto z-10"
           >
-            <div className="max-w-3xl text-left relative z-10 pb-4 sm:pb-8">
+            {/* Subtle gradient at the top/left to ensure text readability without hiding the phone */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/20 to-transparent opacity-80 sm:hidden pointer-events-none" />
 
+            <div className="max-w-3xl text-left relative z-10 pt-8 sm:pt-0 pb-4 sm:pb-8 mb-24 sm:mb-0 w-full sm:w-auto">
 
               {/* Heading */}
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter leading-[1.1] mb-6 drop-shadow-2xl break-words hyphens-auto">
+              <h1 className="relative z-10 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter leading-[1.1] mb-6 break-words hyphens-auto drop-shadow-[0_4px_4px_rgba(0,0,0,1)] sm:drop-shadow-2xl">
                 {customTitle1 || t("hero.title1")} <br className="hidden md:block" />
                 <span className="relative inline-block mt-1 sm:mt-2 mb-1 sm:mb-2">
                   {/* Subtle background glow for the highlighted text */}
                   <span className="absolute -inset-2 bg-gradient-to-r from-blue-600/30 to-cyan-400/30 blur-2xl rounded-full"></span>
-                  <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 drop-shadow-[0_0_30px_rgba(34,211,238,0.4)]">
+                  <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 drop-shadow-[0_0_30px_rgba(34,211,238,0.6)]">
                     {customTitle2 || t("hero.title2")}
                   </span>
                 </span> <br className="hidden sm:block" />
@@ -233,26 +235,26 @@ export default function HeroSection({ customTitle1, customTitle2, customTitle3, 
               </h1>
               
               {/* Paragraph */}
-              <div className="relative pl-5 sm:pl-6 mb-8 sm:mb-12">
+              <div className="relative z-10 pl-5 sm:pl-6 mb-8 sm:mb-12">
                 {/* Glowing vertical line */}
                 <div className="absolute left-0 top-1 bottom-1 w-1 rounded-full bg-gradient-to-b from-cyan-400 via-blue-500 to-transparent opacity-80"></div>
-                <p className="text-base sm:text-lg md:text-xl text-gray-300/90 leading-relaxed max-w-xl font-medium">
+                <p className="text-base sm:text-lg md:text-xl text-gray-100 sm:text-gray-300/90 leading-relaxed max-w-xl font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] sm:drop-shadow-none">
                   {customDesc || t("hero.desc")}
                 </p>
               </div>
 
               {/* Buttons */}
-              <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full sm:w-auto">
+              <div className="relative z-10 flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full sm:w-auto pr-16 sm:pr-0">
                 {/* Primary Button */}
-                <button onClick={openModal} className="group relative w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-full font-bold text-[15px] sm:text-base transition-all duration-300 shadow-[0_0_40px_-10px_rgba(56,189,248,0.5)] hover:shadow-[0_0_60px_-10px_rgba(56,189,248,0.7)] hover:scale-105 cursor-pointer overflow-hidden">
+                <button onClick={openModal} className="group relative w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-full font-bold text-[15px] sm:text-base transition-all duration-300 shadow-[0_0_40px_-10px_rgba(56,189,248,0.5)] hover:shadow-[0_0_60px_-10px_rgba(56,189,248,0.7)] hover:scale-105 cursor-pointer overflow-hidden drop-shadow-xl">
                   <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out rounded-full" />
                   <span className="relative z-10 tracking-wide">{t("hero.btnOrder")}</span>
                   <ArrowRight size={18} strokeWidth={2.5} className="relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
                 </button>
 
                 {/* Secondary Button */}
-                <a href="tel:+998901234567" className="group relative w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-white/20 text-white rounded-full font-bold text-[15px] sm:text-base transition-all duration-300 backdrop-blur-xl hover:shadow-[0_0_30px_-5px_rgba(255,255,255,0.1)] hover:-translate-y-1 cursor-pointer">
-                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-white/5 border border-white/10 group-hover:bg-white/20 transition-colors duration-300">
+                <a href="tel:+998901234567" className="group relative w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 bg-black/40 sm:bg-white/[0.03] hover:bg-black/60 sm:hover:bg-white/[0.08] border border-white/20 sm:border-white/10 hover:border-white/30 sm:hover:border-white/20 text-white rounded-full font-bold text-[15px] sm:text-base transition-all duration-300 backdrop-blur-xl hover:shadow-[0_0_30px_-5px_rgba(255,255,255,0.1)] hover:-translate-y-1 cursor-pointer drop-shadow-xl">
+                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-white/10 sm:bg-white/5 border border-white/20 sm:border-white/10 group-hover:bg-white/20 transition-colors duration-300">
                     <Phone size={14} strokeWidth={2.5} className="text-white" />
                   </div>
                   <span className="tracking-wide">{t("hero.btnCall")}</span>
