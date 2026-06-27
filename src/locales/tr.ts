@@ -1,5 +1,7 @@
 export const tr = {
   nav: {
+    logoFirst: "Malika",
+    logoSecond: "Servis",
     services: "Hizmetler",
     process: "Süreç",
     testimonials: "Yorumlar",
@@ -87,7 +89,12 @@ export const tr = {
     probOther: "Diğer sorun",
     note: "Ek Not",
     notePlaceholder: "Ek bilgi varsa buraya yazın...",
-    submit: "Talebi Gönder"
+    submit: "Talebi Gönder",
+    submitting: "Gönderiliyor...",
+    success: "Başarılı!",
+    successDesc: "Bilgileriniz alındı. Uzmanlarımız yakında sizinle iletişime geçecek.",
+    close: "Kapat",
+    error: "Bir hata oluştu. Lütfen daha sonra tekrar deneyin veya bizi arayın."
   },
   faq: {
     title: "Sıkça Sorulan Sorular",

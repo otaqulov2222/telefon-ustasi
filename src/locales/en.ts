@@ -1,5 +1,7 @@
 export const en = {
   nav: {
+    logoFirst: "Malika",
+    logoSecond: "Service",
     services: "Services",
     process: "Process",
     testimonials: "Reviews",
@@ -87,7 +89,12 @@ export const en = {
     probOther: "Other problem",
     note: "Additional Note",
     notePlaceholder: "If you have any extra information, write it here...",
-    submit: "Send Request"
+    submit: "Send Request",
+    submitting: "Submitting...",
+    success: "Success!",
+    successDesc: "Your details have been received. Our specialists will contact you shortly.",
+    close: "Close",
+    error: "An error occurred. Please try again later or give us a call."
   },
   faq: {
     title: "Frequently Asked Questions",

@@ -74,7 +74,7 @@ export default function FooterSection() {
                 </div>
               </div>
               <div className="text-2xl font-black text-gray-900 dark:text-white tracking-tight transition-colors duration-500">
-                Malika<span className="text-blue-500">Ustasi</span>
+                {t("nav.logoFirst")}<span className="text-blue-500">{t("nav.logoSecond")}</span>
               </div>
             </div>
             <p className="text-gray-600 dark:text-gray-400 text-base leading-relaxed mb-8 max-w-sm transition-colors duration-500">
@@ -166,7 +166,7 @@ export default function FooterSection() {
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-black/10 dark:via-white/10 to-transparent" />
           
           <p className="text-gray-500 text-sm font-medium">
-            © {new Date().getFullYear()} <span className="text-gray-900 dark:text-gray-300 font-bold">MalikaUstasi.</span> {t("footer.rights")}
+            © {new Date().getFullYear()} <span className="text-gray-900 dark:text-gray-300 font-bold">{t("nav.logoFirst")}{t("nav.logoSecond")}.</span> {t("footer.rights")}
           </p>
           <div className="flex flex-wrap justify-center md:justify-end gap-4 sm:gap-8">
             <a href="/privacy" className="text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors text-sm font-medium whitespace-nowrap">{t("footer.privacy")}</a>

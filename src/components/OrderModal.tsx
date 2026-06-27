@@ -10,7 +10,7 @@ import { toast } from "sonner";
 
 export default function OrderModal() {
   const { isOpen, closeModal } = useModal();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -51,7 +51,7 @@ export default function OrderModal() {
       const res = await fetch("/api/telegram", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({ ...formData, language })
       });
 
       if (res.ok) {
@@ -62,11 +62,11 @@ export default function OrderModal() {
           (window as any).gtag('event', 'conversion', { 'send_to': process.env.NEXT_PUBLIC_GA_ADS_ID });
         }
       } else {
-        toast.error("Xatolik yuz berdi. Iltimos keyinroq qayta urinib ko'ring yoki qo'ng'iroq qiling.");
+        toast.error(t("modal.error"));
       }
     } catch (error) {
       console.error(error);
-      toast.error("Xatolik yuz berdi. Iltimos keyinroq qayta urinib ko'ring yoki qo'ng'iroq qiling.");
+      toast.error(t("modal.error"));
     } finally {
       setIsSubmitting(false);
     }
@@ -117,13 +117,13 @@ export default function OrderModal() {
                 >
                   <CheckCircle2 size={40} />
                 </motion.div>
-                <h2 className="text-3xl font-black text-gray-900 dark:text-white mb-3">Muvaffaqiyatli!</h2>
-                <p className="text-gray-600 dark:text-gray-400 font-medium mb-8">Ma'lumotlaringiz qabul qilindi. Tez orada mutaxassislarimiz siz bilan bog'lanishadi.</p>
+                <h2 className="text-3xl font-black text-gray-900 dark:text-white mb-3">{t("modal.success")}</h2>
+                <p className="text-gray-600 dark:text-gray-400 font-medium mb-8">{t("modal.successDesc")}</p>
                 <button 
                   onClick={closeModal}
                   className="bg-black/10 dark:bg-white/10 hover:bg-black/20 dark:hover:bg-white/20 text-gray-900 dark:text-white px-8 py-3 rounded-xl font-bold transition-colors"
                 >
-                  Yopish
+                  {t("modal.close")}
                 </button>
               </div>
             ) : (
@@ -264,7 +264,7 @@ export default function OrderModal() {
                     <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 dark:via-black/10 to-transparent group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
                     
                     <span className="relative z-10 tracking-widest uppercase text-sm">
-                      {isSubmitting ? "Yuborilmoqda..." : t("modal.submit")}
+                      {isSubmitting ? t("modal.submitting") : t("modal.submit")}
                     </span>
                     {!isSubmitting && (
                       <Send className="w-5 h-5 relative z-10 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />

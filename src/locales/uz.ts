@@ -1,5 +1,7 @@
 export const uz = {
   nav: {
+    logoFirst: "Malika",
+    logoSecond: "Servisi",
     services: "Xizmatlar",
     process: "Jarayon",
     testimonials: "Sharhlar",
@@ -87,7 +89,12 @@ export const uz = {
     probOther: "Boshqa muammo",
     note: "Qo'shimcha izoh",
     notePlaceholder: "Qandaydir qo'shimcha ma'lumotlar bo'lsa yozib qoldiring...",
-    submit: "So'rovni yuborish"
+    submit: "So'rovni yuborish",
+    submitting: "Yuborilmoqda...",
+    success: "Muvaffaqiyatli!",
+    successDesc: "Ma'lumotlaringiz qabul qilindi. Tez orada mutaxassislarimiz siz bilan bog'lanishadi.",
+    close: "Yopish",
+    error: "Xatolik yuz berdi. Iltimos keyinroq qayta urinib ko'ring yoki qo'ng'iroq qiling."
   },
   faq: {
     title: "Ko'p Beriladigan Savollar",

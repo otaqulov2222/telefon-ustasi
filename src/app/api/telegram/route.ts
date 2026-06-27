@@ -15,16 +15,61 @@ export async function POST(req: Request) {
       );
     }
 
-    const { name, phone, model, problem, note } = data;
+    const { name, phone, model, problem, note, language } = data;
+
+    const templates: Record<string, any> = {
+      uz: {
+        title: "🔥 <b>Yangi Buyurtma! (Malika Service)</b>",
+        client: "👤 <b>Mijoz:</b>",
+        phone: "📱 <b>Raqam:</b>",
+        device: "📞 <b>Qurilma:</b>",
+        problem: "🛠 <b>Muammo:</b>",
+        note: "💬 <b>Qo'shimcha izoh:</b>",
+        empty: "Kiritilmadi",
+        no_note: "Yo'q"
+      },
+      ru: {
+        title: "🔥 <b>Новый Заказ! (Малика Сервис)</b>",
+        client: "👤 <b>Клиент:</b>",
+        phone: "📱 <b>Номер:</b>",
+        device: "📞 <b>Устройство:</b>",
+        problem: "🛠 <b>Проблема:</b>",
+        note: "💬 <b>Примечание:</b>",
+        empty: "Не указано",
+        no_note: "Нет"
+      },
+      en: {
+        title: "🔥 <b>New Order! (Malika Service)</b>",
+        client: "👤 <b>Client:</b>",
+        phone: "📱 <b>Phone:</b>",
+        device: "📞 <b>Device:</b>",
+        problem: "🛠 <b>Problem:</b>",
+        note: "💬 <b>Note:</b>",
+        empty: "Not provided",
+        no_note: "None"
+      },
+      tr: {
+        title: "🔥 <b>Yeni Sipariş! (Malika Servis)</b>",
+        client: "👤 <b>Müşteri:</b>",
+        phone: "📱 <b>Numara:</b>",
+        device: "📞 <b>Cihaz:</b>",
+        problem: "🛠 <b>Sorun:</b>",
+        note: "💬 <b>Ek not:</b>",
+        empty: "Belirtilmedi",
+        no_note: "Yok"
+      }
+    };
+
+    const t = templates[language] || templates['uz'];
 
     const message = `
-🔥 <b>Yangi Buyurtma! (Malika Ustasi)</b>
+${t.title}
 
-👤 <b>Mijoz:</b> ${name || 'Kiritilmadi'}
-📱 <b>Raqam:</b> ${phone || 'Kiritilmadi'}
-📞 <b>Qurilma:</b> ${model || 'Kiritilmadi'}
-🛠 <b>Muammo:</b> ${problem || 'Kiritilmadi'}
-💬 <b>Qo'shimcha izoh:</b> ${note || "Yo'q"}
+${t.client} ${name || t.empty}
+${t.phone} ${phone || t.empty}
+${t.device} ${model || t.empty}
+${t.problem} ${problem || t.empty}
+${t.note} ${note || t.no_note}
     `;
 
     const url = `https://api.telegram.org/bot${botToken}/sendMessage`;

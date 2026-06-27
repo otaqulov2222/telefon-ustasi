@@ -88,7 +88,7 @@ export default function Navbar() {
                 <span className="text-white font-black text-xl leading-none font-sans relative z-10">M</span>
               </div>
               <div className={`text-xl font-bold tracking-tight flex items-center ${!forceWhite ? 'text-gray-900 dark:text-white' : 'text-white'}`}>
-                Malika<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 dark:from-blue-400 dark:to-cyan-300">Ustasi</span>
+                {t("nav.logoFirst")}<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 dark:from-blue-400 dark:to-cyan-300">{t("nav.logoSecond")}</span>
               </div>
             </a>
 
@@ -130,6 +130,13 @@ export default function Navbar() {
                       : (!forceWhite ? 'bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 border-black/5 dark:border-white/5 hover:border-black/20 dark:hover:border-white/20' : 'bg-white/5 hover:bg-white/10 border-white/10 hover:border-white/20')
                   }`}
                 >
+                  <span className="flex items-center justify-center shrink-0">
+                    <img 
+                      src={language === 'uz' ? 'https://flagcdn.com/uz.svg' : language === 'ru' ? 'https://flagcdn.com/ru.svg' : language === 'en' ? 'https://flagcdn.com/gb.svg' : 'https://flagcdn.com/tr.svg'} 
+                      alt={language} 
+                      className="w-5 h-auto rounded-[2px]" 
+                    />
+                  </span>
                   <span className={`font-bold text-sm tracking-wide uppercase ${!forceWhite ? 'text-gray-900 dark:text-white/90' : 'text-white'}`}>{language}</span>
                   <ChevronDown size={14} strokeWidth={2.5} className={`transition-transform duration-300 ${isLangOpen ? 'rotate-180' : ''} ${!forceWhite ? 'text-gray-600 dark:text-white/70' : 'text-white/70'}`} />
                 </button>
@@ -143,10 +150,22 @@ export default function Navbar() {
                       transition={{ duration: 0.2, ease: "easeOut" }}
                       className="absolute top-full right-0 mt-3 w-40 p-1.5 rounded-2xl bg-white/95 dark:bg-[#0b1120]/95 backdrop-blur-xl border border-black/10 dark:border-white/10 shadow-2xl flex flex-col gap-0.5 z-50 pointer-events-auto"
                     >
-                      <button onClick={() => handleLangSelect("uz")} className={`flex items-center gap-3 w-full px-3 py-2.5 rounded-xl transition-colors text-sm font-bold ${language === 'uz' ? 'bg-blue-600/10 text-blue-600 dark:text-blue-400' : 'text-gray-600 dark:text-white/70 hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5'}`}>O'zbekcha</button>
-                      <button onClick={() => handleLangSelect("ru")} className={`flex items-center gap-3 w-full px-3 py-2.5 rounded-xl transition-colors text-sm font-bold ${language === 'ru' ? 'bg-blue-600/10 text-blue-600 dark:text-blue-400' : 'text-gray-600 dark:text-white/70 hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5'}`}>Русский</button>
-                      <button onClick={() => handleLangSelect("en")} className={`flex items-center gap-3 w-full px-3 py-2.5 rounded-xl transition-colors text-sm font-bold ${language === 'en' ? 'bg-blue-600/10 text-blue-600 dark:text-blue-400' : 'text-gray-600 dark:text-white/70 hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5'}`}>English</button>
-                      <button onClick={() => handleLangSelect("tr")} className={`flex items-center gap-3 w-full px-3 py-2.5 rounded-xl transition-colors text-sm font-bold ${language === 'tr' ? 'bg-blue-600/10 text-blue-600 dark:text-blue-400' : 'text-gray-600 dark:text-white/70 hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5'}`}>Türkçe</button>
+                      <button onClick={() => handleLangSelect("uz")} className={`flex items-center gap-3 w-full px-3 py-2.5 rounded-xl transition-colors text-sm font-bold ${language === 'uz' ? 'bg-blue-600/10 text-blue-600 dark:text-blue-400' : 'text-gray-600 dark:text-white/70 hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5'}`}>
+                        <img src="https://flagcdn.com/uz.svg" alt="UZ" className="w-5 h-auto rounded-[2px]" />
+                        <span>O'zbekcha</span>
+                      </button>
+                      <button onClick={() => handleLangSelect("ru")} className={`flex items-center gap-3 w-full px-3 py-2.5 rounded-xl transition-colors text-sm font-bold ${language === 'ru' ? 'bg-blue-600/10 text-blue-600 dark:text-blue-400' : 'text-gray-600 dark:text-white/70 hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5'}`}>
+                        <img src="https://flagcdn.com/ru.svg" alt="RU" className="w-5 h-auto rounded-[2px]" />
+                        <span>Русский</span>
+                      </button>
+                      <button onClick={() => handleLangSelect("en")} className={`flex items-center gap-3 w-full px-3 py-2.5 rounded-xl transition-colors text-sm font-bold ${language === 'en' ? 'bg-blue-600/10 text-blue-600 dark:text-blue-400' : 'text-gray-600 dark:text-white/70 hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5'}`}>
+                        <img src="https://flagcdn.com/gb.svg" alt="EN" className="w-5 h-auto rounded-[2px]" />
+                        <span>English</span>
+                      </button>
+                      <button onClick={() => handleLangSelect("tr")} className={`flex items-center gap-3 w-full px-3 py-2.5 rounded-xl transition-colors text-sm font-bold ${language === 'tr' ? 'bg-blue-600/10 text-blue-600 dark:text-blue-400' : 'text-gray-600 dark:text-white/70 hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5'}`}>
+                        <img src="https://flagcdn.com/tr.svg" alt="TR" className="w-5 h-auto rounded-[2px]" />
+                        <span>Türkçe</span>
+                      </button>
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -219,10 +238,10 @@ export default function Navbar() {
               className="mt-auto pb-12 flex flex-col gap-4"
             >
               <div className="grid grid-cols-2 gap-4">
-                 <button onClick={() => setLanguage("uz")} className={`h-12 rounded-2xl border flex items-center justify-center font-bold ${language === 'uz' ? 'bg-blue-600 border-blue-500 text-white' : 'bg-black/5 dark:bg-white/5 border-black/10 dark:border-white/10 text-gray-800 dark:text-white'} transition-colors`}>UZ</button>
-                 <button onClick={() => setLanguage("ru")} className={`h-12 rounded-2xl border flex items-center justify-center font-bold ${language === 'ru' ? 'bg-blue-600 border-blue-500 text-white' : 'bg-black/5 dark:bg-white/5 border-black/10 dark:border-white/10 text-gray-800 dark:text-white'} transition-colors`}>RU</button>
-                 <button onClick={() => setLanguage("en")} className={`h-12 rounded-2xl border flex items-center justify-center font-bold ${language === 'en' ? 'bg-blue-600 border-blue-500 text-white' : 'bg-black/5 dark:bg-white/5 border-black/10 dark:border-white/10 text-gray-800 dark:text-white'} transition-colors`}>EN</button>
-                 <button onClick={() => setLanguage("tr")} className={`h-12 rounded-2xl border flex items-center justify-center font-bold ${language === 'tr' ? 'bg-blue-600 border-blue-500 text-white' : 'bg-black/5 dark:bg-white/5 border-black/10 dark:border-white/10 text-gray-800 dark:text-white'} transition-colors`}>TR</button>
+                 <button onClick={() => setLanguage("uz")} className={`h-12 gap-2 rounded-2xl border flex items-center justify-center font-bold ${language === 'uz' ? 'bg-blue-600 border-blue-500 text-white' : 'bg-black/5 dark:bg-white/5 border-black/10 dark:border-white/10 text-gray-800 dark:text-white'} transition-colors`}><img src="https://flagcdn.com/uz.svg" alt="UZ" className="w-5 h-auto rounded-[2px]" /> UZ</button>
+                 <button onClick={() => setLanguage("ru")} className={`h-12 gap-2 rounded-2xl border flex items-center justify-center font-bold ${language === 'ru' ? 'bg-blue-600 border-blue-500 text-white' : 'bg-black/5 dark:bg-white/5 border-black/10 dark:border-white/10 text-gray-800 dark:text-white'} transition-colors`}><img src="https://flagcdn.com/ru.svg" alt="RU" className="w-5 h-auto rounded-[2px]" /> RU</button>
+                 <button onClick={() => setLanguage("en")} className={`h-12 gap-2 rounded-2xl border flex items-center justify-center font-bold ${language === 'en' ? 'bg-blue-600 border-blue-500 text-white' : 'bg-black/5 dark:bg-white/5 border-black/10 dark:border-white/10 text-gray-800 dark:text-white'} transition-colors`}><img src="https://flagcdn.com/gb.svg" alt="EN" className="w-5 h-auto rounded-[2px]" /> EN</button>
+                 <button onClick={() => setLanguage("tr")} className={`h-12 gap-2 rounded-2xl border flex items-center justify-center font-bold ${language === 'tr' ? 'bg-blue-600 border-blue-500 text-white' : 'bg-black/5 dark:bg-white/5 border-black/10 dark:border-white/10 text-gray-800 dark:text-white'} transition-colors`}><img src="https://flagcdn.com/tr.svg" alt="TR" className="w-5 h-auto rounded-[2px]" /> TR</button>
               </div>
               <button 
                 className="h-16 rounded-2xl bg-blue-600 text-white flex items-center justify-center gap-3 font-bold text-xl cursor-pointer hover:bg-blue-500 transition-colors shadow-lg shadow-blue-600/30"

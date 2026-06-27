@@ -5,20 +5,20 @@ import FloatingContactButton from "@/components/FloatingContactButton";
 import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
-  title: "Malika Ustasi - Toshkentda №1 Telefon Ta'mirlash Markazi",
+  title: "Malika Service - Toshkentda №1 Telefon Ta'mirlash Markazi",
   description: "Singan ekranlar, tez tugaydigan batareyalar va dasturiy muammolarni eng tez fursatlarda ta'mirlaymiz. 6 oygacha kafolat. Malika savdo majmuasi.",
   keywords: "telefon tamirlash, iphone ustasi, malika bozor service, ekran almashtirish, batareya almashtirish",
   openGraph: {
-    title: "Malika Ustasi - Telefon Ta'mirlash Markazi",
+    title: "Malika Service - Telefon Ta'mirlash Markazi",
     description: "Toshkentda №1 Telefon Ta'mirlash Markazi. Eng tez va ishonchli xizmat ko'rsatish.",
     url: "https://malikabozorservice.uz",
-    siteName: "Malika Ustasi",
+    siteName: "Malika Service",
     images: [
       {
         url: "/section1-bg.png",
         width: 1200,
         height: 630,
-        alt: "Malika Ustasi - Telefon Ta'mirlash",
+        alt: "Malika Service - Telefon Ta'mirlash",
       },
     ],
     locale: "uz_UZ",
