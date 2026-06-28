@@ -219,7 +219,7 @@ export default function HeroSection({ customTitle1, customTitle2, customTitle3, 
             {/* Subtle gradient at the top/left to ensure text readability without hiding the phone */}
             <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/20 to-transparent opacity-80 sm:hidden pointer-events-none" />
 
-            <div className="max-w-3xl text-left relative z-10 pt-8 sm:pt-0 pb-4 sm:pb-8 mb-24 sm:mb-0 w-full sm:w-auto">
+            <div className="max-w-3xl text-left relative z-10 pt-8 sm:pt-0 pb-4 sm:pb-8 mb-16 sm:mb-0 w-full sm:w-auto">
 
               {/* Heading */}
               <h1 className="relative z-10 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter leading-[1.1] mb-6 break-words hyphens-auto drop-shadow-[0_4px_4px_rgba(0,0,0,1)] sm:drop-shadow-2xl">
@@ -244,7 +244,7 @@ export default function HeroSection({ customTitle1, customTitle2, customTitle3, 
               </div>
 
               {/* Buttons */}
-              <div className="relative z-10 flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full sm:w-auto pr-16 sm:pr-0">
+              <div className="relative z-10 flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full sm:w-auto">
                 {/* Primary Button */}
                 <button onClick={openModal} className="group relative w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-full font-bold text-[15px] sm:text-base transition-all duration-300 shadow-[0_0_40px_-10px_rgba(56,189,248,0.5)] hover:shadow-[0_0_60px_-10px_rgba(56,189,248,0.7)] hover:scale-105 cursor-pointer overflow-hidden drop-shadow-xl">
                   <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out rounded-full" />

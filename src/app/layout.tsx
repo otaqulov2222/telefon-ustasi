@@ -5,6 +5,7 @@ import FloatingContactButton from "@/components/FloatingContactButton";
 import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://malikabozorservice.uz"),
   title: "Malika Service - Toshkentda №1 Telefon Ta'mirlash Markazi",
   description: "Singan ekranlar, tez tugaydigan batareyalar va dasturiy muammolarni eng tez fursatlarda ta'mirlaymiz. 6 oygacha kafolat. Malika savdo majmuasi.",
   keywords: "telefon tamirlash, iphone ustasi, malika bozor service, ekran almashtirish, batareya almashtirish",

@@ -68,7 +68,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 pt-4 px-4 sm:px-6 lg:px-8 pointer-events-none">
+      <header className="fixed top-0 left-0 right-0 z-[70] pt-4 px-4 sm:px-6 lg:px-8 pointer-events-none">
         <motion.div 
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -213,9 +213,9 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-white/95 dark:bg-[#040814]/95 backdrop-blur-2xl pt-28 px-6 md:hidden flex flex-col h-[100dvh]"
+            className="fixed inset-0 z-[60] bg-white/95 dark:bg-[#040814]/95 backdrop-blur-2xl pt-28 px-6 md:hidden flex flex-col h-[100dvh] overflow-y-auto"
           >
-            <nav className="flex flex-col gap-2 text-center mt-8">
+            <nav className="flex flex-col gap-2 text-center mt-4 sm:mt-8">
               {navLinks.map((link, i) => (
                 <motion.a
                   initial={{ opacity: 0, y: 20 }}
@@ -223,7 +223,7 @@ export default function Navbar() {
                   transition={{ delay: i * 0.1, duration: 0.4, ease: "easeOut" }}
                   key={link.name}
                   href={link.href}
-                  className="text-3xl font-black text-gray-800 dark:text-white/80 hover:text-black dark:hover:text-white transition-colors cursor-pointer py-4"
+                  className="text-2xl sm:text-3xl font-black text-gray-800 dark:text-white/80 hover:text-black dark:hover:text-white transition-colors cursor-pointer py-3"
                   onClick={(e) => handleScrollTo(e, link.href)}
                 >
                   {link.name}
@@ -235,7 +235,7 @@ export default function Navbar() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.4 }}
-              className="mt-auto pb-12 flex flex-col gap-4"
+              className="mt-auto pt-6 pb-8 sm:pb-12 flex flex-col gap-4"
             >
               <div className="grid grid-cols-2 gap-4">
                  <button onClick={() => setLanguage("uz")} className={`h-12 gap-2 rounded-2xl border flex items-center justify-center font-bold ${language === 'uz' ? 'bg-blue-600 border-blue-500 text-white' : 'bg-black/5 dark:bg-white/5 border-black/10 dark:border-white/10 text-gray-800 dark:text-white'} transition-colors`}><img src="https://flagcdn.com/uz.svg" alt="UZ" className="w-5 h-auto rounded-[2px]" /> UZ</button>

@@ -2,7 +2,7 @@
 
 import { useEffect, useState, FormEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Send, Smartphone, PenTool, Sparkles, User, Phone, CheckCircle2 } from "lucide-react";
+import { X, Send, Smartphone, PenTool, Sparkles, User, Phone, CheckCircle2, ClipboardEdit } from "lucide-react";
 import { useModal } from "@/context/ModalContext";
 import { useLanguage } from "@/context/LanguageContext";
 import { sendGAEvent } from "@next/third-parties/google";
@@ -130,8 +130,10 @@ export default function OrderModal() {
               <>
                 {/* Header / Top Section */}
                 <div className="relative z-10 pt-8 pb-4 px-8 text-center border-b border-black/5 dark:border-white/5 bg-gradient-to-b from-black/[0.02] dark:from-white/[0.02] to-transparent shrink-0">
-                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 mb-4 shadow-sm dark:shadow-lg backdrop-blur-md">
-                    <Sparkles className="w-7 h-7 text-gray-900 dark:text-white" />
+                  <div className="inline-flex items-center justify-center w-[60px] h-[60px] rounded-[20px] bg-[#1a1c20] border border-white/10 mb-4 shadow-[0_8px_16px_rgba(0,0,0,0.4)] ring-1 ring-inset ring-white/5 overflow-hidden relative">
+                    {/* Subtle inner top highlight */}
+                    <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+                    <ClipboardEdit className="w-8 h-8 text-white relative z-10" />
                   </div>
                   
                   <h2 className="text-2xl sm:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-b from-gray-900 to-gray-600 dark:from-white dark:to-gray-400 tracking-tight mb-2">
